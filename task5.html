@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function Calculate() {
+            const number1 = document.querySelector("#input1");
+            const number2 = document.querySelector("#input2");
+            const output = document.querySelector("#output");
+            const sum = parseInt(number1.value) + parseInt(number2.value);
+            output.innerHTML = sum;
+
+            return false;
+        }
+    </script>
+    <form name='form1'>
+
+        <input type="text" name="text1" value="0" id="input1">
+        <input type="text" name="text1" value="0" id="input2">
+        <button type="button" onclick="Calculate()">Calc</button>
+
+        <p id="output"></p>
+    </form>
+
+
+</body>
+
+</html>

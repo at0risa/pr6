@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Тестування</title>
+    <style>
+        .column {
+            float: left;
+            text-align: center;
+            width: 6%;
+            border: 1px solid;
+            /* border-radius: 5px; */
+
+        }
+
+        .row {
+            display: flex;
+        }
+
+        button {
+            margin-left: 3%;
+            margin-top: 1%;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <h1>Запитання: Скільки буде 5 + 6?</h1>
+
+    <script>
+        // створюємо двовимірний масив з даними
+        document.write(`
+         <div class="row">
+            <div class="column">
+                <div>
+             <label for="rightanswer">Перемикачі</label>
+                </div>
+            </div>
+        <div class="column">
+            <div>
+             <label for="rightanswer">Підказки</label>
+            </div>
+        </div>
+        </div>
+
+       <div class="row">
+            <div class="column">
+                <div>
+            <input type="radio" id="answer2" name="drone" value="rightanswer" checked>
+                </div>
+            </div>
+        <div class="column">
+            <div>
+             <label for="rightanswer">56</label>
+            </div>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <div>
+            <input type="radio" id="answer1" name="drone" value="rightanswer" checked>
+                </div>
+            </div>
+        <div class="column">
+            <div>
+             <label for="rightanswer">11</label>
+            </div>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <div>
+            <input type="radio" id="answer3" name="drone" value="rightanswer" checked>
+                </div>
+            </div>
+        <div class="column">
+            <div>
+             <label for="rightanswer">15</label>
+            </div>
+        </div>
+        </div>
+       `);
+
+        // вставляємо таблицю у документ
+        document.body.appendChild(table);
+
+        function checkAnswer() {
+            const correctAnswer = true; // Ваш логічний елемент
+            const userAnswer = document.getElementById("answer1").checked;
+
+            if (userAnswer === correctAnswer) {
+                alert("Вітаємо! Ваша відповідь є правильною.");
+            } else {
+                alert("На жаль, ваша відповідь є неправильною.");
+            }
+        }
+    </script>
+
+    <button onMouseOver="checkAnswer()">Перевірити</button>
+
+</body>
+
+</html>

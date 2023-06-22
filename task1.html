@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+
+
+<head>
+    <meta charset="UTF-8">
+    <TITLE>Background</TITLE>
+</head>
+
+<body>
+    <select name="colors" onchange="changecolor()">
+        <option value="blue" selected>blue</option>
+        <option value="white" selected>white</option>
+        <option value="green" selected>green</option>
+    </select>
+    <script>
+        function changecolor() {
+            let color = document.querySelector('select');
+            let body = document.querySelector('body');
+
+            body.style.background = color.value;
+        }
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Тестування</title>
+</head>
+
+<body>
+    <h2>Тестування знань таблиці істинності логічного елемента</h2>
+
+
+    <script>
+        // створюємо двовимірний масив з даними
+        var data = [
+            ["x₂", "x₁", "y"],
+            [0, 0, 0],
+            [0, 1, 1],
+            [1, 0, 1],
+            [1, 1, 1]
+        ];
+
+        // створюємо елемент таблиці
+        var table = document.createElement("table");
+
+        // заповнюємо таблицю за допомогою циклів
+        for (var i = 0; i < data.length; i++) {
+            var row = document.createElement("tr");
+            for (var j = 0; j < data[i].length; j++) {
+                var cell = document.createElement("td");
+                cell.textContent = data[i][j];
+                row.appendChild(cell);
+            }
+            table.appendChild(row);
+        }
+
+        // вставляємо таблицю у документ
+        document.body.appendChild(table);
+
+        function checkAnswer() {
+            const correctAnswer = true; // Ваш логічний елемент
+            const userAnswer = document.getElementById("answer1").checked;
+
+            if (userAnswer === correctAnswer) {
+                alert("Вітаємо! Ваша відповідь є правильною.");
+            } else {
+                alert("На жаль, ваша відповідь є неправильною.");
+            }
+        }
+    </script>
+
+    <p>Оберіть правильну відповідь:</p>
+    <div>
+        <input type="radio" id="answer1" name="drone" value="rightanswer" checked>
+        <label for="rightanswer">Елемент ВИКЛЮЧАЮЧЕ АБО-НЕ (рівнозначність)</label>
+    </div>
+
+    <div>
+        <input type="radio" id="answer2" name="drone" value="answer2">
+        <label for="answer2">Елемент І(кон'юкція)</label>
+    </div>
+
+    <div>
+        <input type="radio" id="answer3" name="drone" value="answer3">
+        <label for="answer3">Елемент ВИКЛЮЧАЮЧЕ АБО(нерівнозначність)</label>
+    </div>
+
+    <div>
+        <input type="radio" id="answer5" name="drone" value="answer5">
+        <label for="answer5">Елемент АБО-НЕ (стрілка Пірса)</label>
+    </div>
+
+    <div>
+        <input type="radio" id="answer4" name="drone" value="answer4">
+        <label for="answer4">Елемент І-НЕ(штриф Шеффера)</label>
+    </div>
+
+
+
+    <button onMouseOver="checkAnswer()">Перевірити</button>
+
+</body>
+
+</html>
